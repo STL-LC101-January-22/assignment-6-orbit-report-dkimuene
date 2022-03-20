@@ -22,6 +22,10 @@ export class Satellite {
 		}
    }
 
+   evenOrOdd(arr){
+	return arr.indexOf(this) % 2 === 0 && this.type.toLowerCase() !== 'space debris';
+   }
+
 }
 
 // TODO 3a: fix isSpaceDebris check
