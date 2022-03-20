@@ -1,3 +1,4 @@
+import { getLocaleExtraDayPeriods } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
 import { Satellite } from '../satellite';
 
@@ -7,10 +8,18 @@ import { Satellite } from '../satellite';
   styleUrls: ['./orbit-counts.component.css']
 })
 export class OrbitCountsComponent implements OnInit {
+	types: string[] = [
+		"Space Debris",
+		"Communication",
+		"Probe",
+		"Positioning",
+		"Space Station",
+		"Telescope"
+	]
 
 	@Input() satellites: Satellite[];
-
-  constructor() { }
+	
+	constructor() { }
 
   ngOnInit() {
   }
@@ -26,6 +35,12 @@ export class OrbitCountsComponent implements OnInit {
 	}
 	return count;
  }
-
+ total(): number{
+	 let sum: number = 0;
+	 this.types.forEach(x => {
+		sum += this.countByType(x);
+	 })
+	 return sum;
+ }	
 
 }
