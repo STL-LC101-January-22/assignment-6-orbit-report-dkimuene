@@ -1,3 +1,4 @@
+import { getLocaleExtraDayPeriods } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
 import { Satellite } from '../satellite';
 
@@ -17,8 +18,8 @@ export class OrbitCountsComponent implements OnInit {
 	]
 
 	@Input() satellites: Satellite[];
-
-  constructor() { }
+	
+	constructor() { }
 
   ngOnInit() {
   }
@@ -39,7 +40,7 @@ export class OrbitCountsComponent implements OnInit {
 	 this.types.forEach(x => {
 		sum += this.countByType(x);
 	 })
-	 return sum
- }
+	 return sum;
+ }	
 
 }

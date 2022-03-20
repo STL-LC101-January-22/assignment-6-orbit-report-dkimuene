@@ -1,6 +1,6 @@
 <h3>Satellite Count:</h3>
 <div class="counts">
-	<div>Total: <span  #dsfg class="counts-total"></span>{{total()}}</div>
+	<div>Total: <span class="counts-total"></span>{{satellites.length}}</div>
 	<div *ngFor="let type of types">{{type}} <span  #dsfg class="counts-total"></span>{{countByType(type)}}</div>
 </div>
 
