@@ -7,6 +7,14 @@ import { Satellite } from '../satellite';
   styleUrls: ['./orbit-counts.component.css']
 })
 export class OrbitCountsComponent implements OnInit {
+	types: string[] = [
+		"Space Debris",
+		"Communication",
+		"Probe",
+		"Positioning",
+		"Space Station",
+		"Telescope"
+	]
 
 	@Input() satellites: Satellite[];
 
@@ -26,6 +34,12 @@ export class OrbitCountsComponent implements OnInit {
 	}
 	return count;
  }
-
+ total(): number{
+	 let sum: number = 0;
+	 this.types.forEach(x => {
+		sum += this.countByType(x);
+	 })
+	 return sum
+ }
 
 }
